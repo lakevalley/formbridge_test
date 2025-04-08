@@ -11,7 +11,7 @@ namespace E2ETesting.Pages
 
     //Functions and checks
 
-    public async Task<bool> IsLoginVisible() => await _page.QuerySelectorAsync(".login") != null;
+    public async Task<bool> IsLoginVisible() => await _page.WaitForSelectorAsync(".login") != null;
 
     public async Task GoToLoginPage() =>
       await _page.GotoAsync("http://localhost:5173/login");
