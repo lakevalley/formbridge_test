@@ -14,10 +14,7 @@ namespace E2ETesting.Pages
 
     public async Task GoToHomePage() => await _page.GotoAsync("http://localhost:5173");
    
-    public async Task<bool> IsTheSignInButtonVisible() 
-    {
-      return var signInButton = await _page.QuerySelectorAsync(".sign-in-btn");
-    }
+    public async Task<bool> IsTheSignInButtonVisible() => await _page.QuerySelectorAsync(".sign-in-btn") != null;
     
     public async Task ClickSignIn() => await _page.ClickAsync(".sign-in-btn");
   }

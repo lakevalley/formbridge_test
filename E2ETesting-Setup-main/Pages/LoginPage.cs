@@ -11,16 +11,16 @@ namespace E2ETesting.Pages
 
     //Functions and checks
 
-    public async Task<bool> IsLoginVisible() 
-    {
-      return await _page.QuerySelectorAsync(".login");
-    }
+    public async Task<bool> IsLoginVisible() => await _page.QuerySelectorAsync(".login") != null;
 
     public async Task GoToLoginPage() =>
       await _page.GotoAsync("http://localhost:5173/login");
 
-    public async Task FillEmail(string email) =>
-      await _page.FillAsync("[name='email']", email);
+    public async Task FillInSupportCredentials()
+    {
+      await _page.FillAsync("[name='email']", "support1");
+      await _page.FillAsync("[name='password']", "a");
+    }
 
     public async Task FillPassword(string password) =>
       await _page.FillAsync("[name='password']", password);
