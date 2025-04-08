@@ -1,10 +1,8 @@
-using Microsoft.Extensions.ObjectPool;
 using System.Text.Json;
 using Npgsql;
 using server;
 using server.Classes;
 using server.Extensions;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 
