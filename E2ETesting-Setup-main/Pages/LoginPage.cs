@@ -21,6 +21,12 @@ namespace E2ETesting.Pages
       await _page.FillAsync("[name='email']", "support1");
       await _page.FillAsync("[name='password']", "a");
     }
+    public async Task FillInAdminCredentials()
+    {
+      await _page.FillAsync("[name='email']", "admin1");
+      await _page.FillAsync("[name='password']", "a");
+    }
+    
 
     public async Task FillPassword(string password) =>
       await _page.FillAsync("[name='password']", password);
