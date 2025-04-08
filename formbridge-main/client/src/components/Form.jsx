@@ -54,13 +54,12 @@ export default function Form() {
     if (ticket_id) {
       await sendEmail(ticket_id);
       // alert that email has been sent, then clear form
-      alert(
-        `Thank you for submitting your inquiry!\n An email with a chat-link has been sent to "${email}".`
-      );
+      
       setFirstname("");
       setLastname("");
       setEmail("");
       setMessage("");
+      navigate("/")
     }
   }
 
