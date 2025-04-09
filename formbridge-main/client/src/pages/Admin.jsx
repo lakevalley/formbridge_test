@@ -84,6 +84,7 @@ export default function Admin() {
                     All Support Personnel
                   </button>
                   <button
+                    id={"add-user"}
                     className={toggleAdd ? "sub-button toggled" : "sub-button"}
                     onClick={() => (toggleAdd ? setToggleAdd(false) : setToggleAdd(true))}>
                     Add User
