@@ -20,17 +20,8 @@ namespace E2ETesting.Pages
 
     public async Task ClickAddUserButton()
     {
-      //var addUserButton = await _page.QuerySelectorAsync(":has-text('Add User')");
       var addUserButton = await _page.QuerySelectorAsync("#add-user");
-
-      if (addUserButton is not null)
-      {
-        await addUserButton.ClickAsync();
-      }
-      else
-      {
-        Console.WriteLine("❌ 'Add User' button not found.");
-      }
+      await addUserButton.ClickAsync();
     }
     
     public async Task FillOutUserFields()
@@ -48,8 +39,31 @@ namespace E2ETesting.Pages
 
     public async Task SearchForNewUser()
     {
-      await _page.QuerySelectorAsync(":has-text('test@testsson.com')");
-      await _page.PauseAsync();
+      var element = await _page.QuerySelectorAsync(":has-text('test@testsson.com')");
+      Assert.True(element is not null, "No element found");
+    }
+
+    public async Task ClickTheAiChatBotButton()
+    {
+      var aiChatBotButton = await _page.QuerySelectorAsync("#edit-ai");
+      await aiChatBotButton.ClickAsync();
+    }
+
+    public async Task GiveAiNewPersonality()
+    {
+      await _page.FillAsync("#message", "Test Personality");
+    }
+
+    public async Task ClickOnTheAiSubmitButton()
+    {
+      var aiSubmitButton = await _page.QuerySelectorAsync("[value='Submit']");
+      await aiSubmitButton.ClickAsync();
+    }
+
+    public async Task IsSettingUpdated()
+    {
+      var element = await _page.QuerySelectorAsync(":has-text('Test Personality')");
+      Assert.True(element is not null, "'Test Personality' is not null");
     }
   }
 }

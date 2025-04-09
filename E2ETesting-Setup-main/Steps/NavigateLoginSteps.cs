@@ -21,8 +21,6 @@ namespace E2ETesting.Steps
       _loginPage = new LoginPage(page);
     }
 
-
-    //Ghirkin logic from instanced pages:
     [Given(@"I am on the FormBridge homepage")]
     public async Task GivenIAmOnTheFormBridgeHomepage()
     {
