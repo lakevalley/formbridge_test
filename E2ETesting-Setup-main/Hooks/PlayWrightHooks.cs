@@ -21,7 +21,7 @@ namespace E2ETesting.Hooks
     public async Task Setup()
     {
       _playwright = await Playwright.CreateAsync();
-      _browser = await _playwright.Chromium.LaunchAsync(new() { Headless = false, SlowMo = 800 });
+      _browser = await _playwright.Chromium.LaunchAsync(new() { Headless = true, SlowMo = 800 });
       _context = await _browser.NewContextAsync();
       _page = await _context.NewPageAsync();
 
