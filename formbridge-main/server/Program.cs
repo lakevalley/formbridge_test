@@ -21,6 +21,10 @@ builder.Services.AddSingleton(db);
 var app = builder.Build();
 
 app.UseSession();
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
 
 app.MapGet("/api/login", (Func<HttpContext, Task<IResult>>)GetLogin);
 app.MapPost("/api/login", (Func<HttpContext, LoginRequest, NpgsqlDataSource, Task<IResult>>)Login);
