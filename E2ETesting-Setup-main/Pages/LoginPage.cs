@@ -14,7 +14,7 @@ namespace E2ETesting.Pages
     public async Task<bool> IsLoginVisible() => await _page.WaitForSelectorAsync(".login") != null;
 
     public async Task GoToLoginPage() =>
-      await _page.GotoAsync("http://localhost:5173/login");
+      await _page.GotoAsync("/login");
 
     public async Task FillInSupportCredentials()
     {

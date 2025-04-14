@@ -9,7 +9,7 @@ namespace E2ETesting.Pages
     private readonly IPage _page;
     public FormPage(IPage page) => _page = page;
 
-    public async Task GoToInetFormPage() => await _page.GotoAsync("http://localhost:5173/form/1");
+    public async Task GoToInetFormPage() => await _page.GotoAsync("/form/1");
 
     public async Task FillOutTheForm()
     {
