@@ -12,7 +12,7 @@ namespace E2ETesting.Pages
 
     //Functions and checks
 
-    public async Task GoToHomePage() => await _page.GotoAsync("/");
+    public async Task GoToHomePage() => await _page.GotoAsync("http://localhost:5120/");
    
     public async Task<bool> IsTheSignInButtonVisible() => await _page.QuerySelectorAsync(".sign-in-btn") != null;
     
