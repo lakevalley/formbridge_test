@@ -13,7 +13,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"pm.collectionVariables.set(\"base_url\", \"https://217.76.56.135:54321\");"
+							"pm.collectionVariables.set(\"base_url\", \"http://localhost:5120\");"
 						],
 						"type": "text/javascript",
 						"packages": {}
