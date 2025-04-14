@@ -39,7 +39,7 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Install dotnet project dependencies
-        run: dotnet restore
+        run: cd E2ETesting-Setup-main && dotnet restore
       - name: Build/Restore Playwright Project
         run: cd E2ETesting-Setup-main && dotnet build
       - name: Ensure browsers are installed
