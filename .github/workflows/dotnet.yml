@@ -62,6 +62,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: | 
-            cd /srv/www/malmo/andrej
+            cd /srv/www/malmo/andres
             git clone https://github.com/lakevalley/formbridge_test.git        
 
