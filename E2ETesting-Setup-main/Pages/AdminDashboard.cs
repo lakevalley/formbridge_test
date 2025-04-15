@@ -10,7 +10,7 @@ namespace E2ETesting.Pages
     public AdminDashboard(IPage page) => _page = page;
     
     public async Task<bool> IsAdminDashboardVisible() =>
-      await _page.QuerySelectorAsync(":has-text('Admin Dashboard')") != null;
+      await _page.WaitForSelectorAsync(":has-text('Admin Dashboard')") != null;
 
     public async Task ClickLogout()
     {
@@ -39,7 +39,7 @@ namespace E2ETesting.Pages
 
     public async Task SearchForNewUser()
     {
-      var element = await _page.QuerySelectorAsync(":has-text('test@testsson.com')");
+      var element = await _page.WaitForSelectorAsync(":has-text('test@testsson.com')");
       Assert.True(element is not null, "No element found");
     }
 
