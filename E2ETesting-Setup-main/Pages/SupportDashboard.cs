@@ -10,7 +10,7 @@ namespace E2ETesting.Pages
     public SupportDashboard(IPage page) => _page = page;
     
     public async Task<bool> IsSupportDashboardVisible() =>
-      await _page.QuerySelectorAsync(":has-text('Support Dashboard')") != null;
+      await _page.WaitForSelectorAsync(":has-text('Support Dashboard')") != null;
 
     public async Task ClickLogout()
     {
