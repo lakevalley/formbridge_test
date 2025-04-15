@@ -63,6 +63,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: | 
             cd /srv/www/malmo/andrej # första gången
-            git clone <https:adress> # första gången
+            git clone https://github.com/lakevalley/formbridge_test.git # första gången
             git pull # andra gången
 
